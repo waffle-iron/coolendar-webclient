@@ -1,0 +1,135 @@
+html {
+  font-family: "Futura", Arial, Helvetica;
+  font-size: 1.15em; }
+
+body {
+  padding: 0px;
+  margin: 0px;
+  color: #1C1C1C; }
+
+.container {
+  overflow: hidden;
+  min-height: 600px; }
+
+.container > div {
+  min-height: 600px; }
+
+.main {
+  width: 75%;
+  background: #F2F2F2; }
+
+.main, .sidebar {
+  float: left; }
+
+.sidebar .tabs .item, .sidebar .button {
+  cursor: pointer;
+  text-align: center;
+  float: left; }
+
+.sidebar {
+  position: relative;
+  width: 25%;
+  background: #1C1C1C;
+  color: #E1E1E1; }
+  .sidebar .tabs {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    min-height: 50px;
+    background: #272727; }
+    .sidebar .tabs .item {
+      height: 50px;
+      width: 75px;
+      text-align: center;
+      line-height: 50px;
+      background: #272727;
+      color: inherit; }
+      .sidebar .tabs .item.active {
+        background: #1C1C1C; }
+      .sidebar .tabs .item:hover {
+        background: #1C1C1C; }
+  .sidebar .content {
+    position: relative;
+    height: 500px;
+    width: 100%;
+    top: 50px;
+    bottom: 50px;
+    margin: auto;
+    text-align: center; }
+    .sidebar .content .search-wrapper {
+      float: left;
+      width: 100%; }
+    .sidebar .content .data-wrapper {
+      float: left;
+      width: 100%;
+      height: 400px;
+      overflow: hidden; }
+  .sidebar .button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 37.5px;
+    background: #1A8ACC;
+    color: #E1E1E1;
+    line-height: 37.5px; }
+    .sidebar .button:hover {
+      background: #177bb5; }
+
+.search-box {
+  position: relative;
+  width: 80%;
+  height: 25px;
+  border: 0px;
+  border-radius: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 20px 0px;
+  background: #272727;
+  color: #A5A5A5; }
+
+.main, .sidebar {
+  float: left; }
+
+.sidebar .tabs .item, .sidebar .button {
+  cursor: pointer;
+  text-align: center;
+  float: left; }
+
+.card-wrapper {
+  position: relative;
+  width: 100%; }
+
+.card {
+  position: relative;
+  float: left;
+  width: 95%;
+  display: block;
+  background: transparent;
+  color: #A5A5A5;
+  text-align: left;
+  padding: 10px 20px; }
+  .card:hover {
+    background: #1f1f1f; }
+  .card .calendar {
+    float: left;
+    padding: 10px;
+    width: 52.5px;
+    height: 52.5px;
+    background: #272727;
+    text-align: center; }
+    .card .calendar .date {
+      font-size: 1.5em;
+      font-weight: bold; }
+    .card .calendar .month {
+      font-size: 0.8em;
+      font-weight: bold; }
+  .card .information {
+    margin-left: 10px;
+    float: left;
+    width: 60%; }
+    .card .information .title {
+      font-size: 0.8em;
+      font-weight: bold; }
+    .card .information .summary {
+      margin-top: 5px;
+      font-size: 0.7em; }

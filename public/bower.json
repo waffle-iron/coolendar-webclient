@@ -1,0 +1,24 @@
+{
+  "name": "public",
+  "authors": [
+    "sdarmaputra <surya.igede@gmail.com>"
+  ],
+  "description": "Coolendar Assets",
+  "main": "",
+  "keywords": [
+    "calendar",
+    "agenda'"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "glyphicons": "^0.0.2"
+  }
+}

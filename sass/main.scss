@@ -1,0 +1,31 @@
+@import 'helpers/variables';
+
+html {
+	font-family: $font-family;
+	font-size: $default-font-size;
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+	color: $primary-font-color;
+}
+
+.container {
+	overflow: hidden;
+	min-height: map-get($height, minimum-page);
+}
+
+.container > div {
+	min-height: map-get($height, minimum-page);
+}
+
+.main {
+	@extend %float-left;
+	width: map-get($main-width, large);
+	background: $background-color;
+}
+
+@import 'components/sidebar';
+@import 'components/search';
+@import 'components/card';

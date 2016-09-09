@@ -1,0 +1,40 @@
+extends layout
+
+block content
+	div(class="container")
+		div(class="main")
+			div(class="inner")
+				p. 
+					main
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vestibulum lorem ut interdum mollis. Morbi vel facilisis orci. Nulla facilisi. Maecenas vestibulum lacus magna, ut volutpat nisl ultrices malesuada. Sed eget vehicula tellus. In semper leo at fermentum venenatis. Etiam quis laoreet metus. Fusce eu metus enim.
+		div(class="sidebar")
+			div(class="tabs")
+				div(class="item active")
+					i(class="glyphicon glyphicon-time")
+				div(class="item")
+					i(class="glyphicon glyphicon-user")
+
+			div(class="content")
+				div(class="search-wrapper")
+					input(class="search-box" type="text" placeholder="Search...")
+				
+				div(class="data-wrapper")
+					div(class="card-wrapper")
+						- for (var i=1; i<=5; i++) {
+							div(class="card")
+								div(class="calendar")
+									div(class="date")
+										= "2" + i
+									div(class="month").
+										Sept
+								div(class="information")
+									div(class="title").
+										Kegiatan Menganukan Anu
+									div(class="summary")
+										i(class="glyphicon glyphicon-map-marker")
+										span Aula Teknik Informatika.
+						- }
+					
+
+			div(class="button").
+				Expand

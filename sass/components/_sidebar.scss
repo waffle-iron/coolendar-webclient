@@ -1,0 +1,73 @@
+@import '../helpers/variables';
+@import '../helpers/extenders';
+
+.sidebar {
+	@extend %float-left;
+	position: relative;
+	width: map-get($sidebar-width, large);
+	background: $inverted-background-color;
+	color: $inverted-primary-font-color;
+
+	.tabs {
+		position: absolute;
+		top: 0;
+		width: 100%;
+		min-height:	map-get($height, tabulation);
+		background: $secondary-inverted-background-color;
+
+		.item {
+			@extend %button;
+			height: map-get($height, tabulation);
+			width: map-get($height, tabulation) * 1.5;
+			text-align: center;
+			line-height: map-get($height, tabulation);
+			background: $secondary-inverted-background-color;
+			color: inherit;
+
+			&.active {
+				background: $inverted-background-color;
+			}
+
+			&:hover {
+				background: $inverted-background-color;	
+			}
+		}
+	}
+
+	.content {
+		position: relative;
+		height: map-get($height, minimum-page) - (map-get($height, tabulation) * 2);
+		width: 100%;
+		top: map-get($height, tabulation);
+		bottom: map-get($height, tabulation);
+		margin: auto;
+		text-align: center;
+
+		.search-wrapper {
+			float: left;
+			width: 100%;
+		}
+
+		.data-wrapper {
+			float: left;
+			width: 100%;
+			height: map-get($height, minimum-page) - (map-get($height, tabulation) * 4); 
+			overflow: hidden;
+		}
+	}
+
+	.button {
+		@extend %button;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		min-height: map-get($height, tabulation) * 0.75;
+		background: map-get($button-background-color, primary);
+		color: $inverted-primary-font-color;
+		line-height: map-get($height, tabulation) * 0.75;
+
+		&:hover {
+			background: darken(map-get($button-background-color, primary), 5%);
+		}
+	}
+}

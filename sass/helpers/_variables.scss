@@ -1,0 +1,37 @@
+$background-color: #F2F2F2;
+$inverted-background-color: #1C1C1C;
+$secondary-inverted-background-color: #272727;
+$padding: (
+	none: 0,
+	extra-small: 5px,
+	small: 10px,
+	normal: 20px
+);
+$height: (
+	minimum-page: 600px,
+	tabulation: 50px
+);
+
+
+$main-width: (
+	large: 75%	
+);
+$sidebar-width: (
+	large: 25%
+);
+
+
+$primary-font-color: #1C1C1C;
+$secondary-font-color: #585858;
+$inverted-primary-font-color: #E1E1E1;
+$inverted-secondary-font-color: #A5A5A5;
+$font-family: "Futura", Arial, Helvetica;
+$default-font-size: 1.15em;
+
+
+$button-background-color: (
+	primary: #1A8ACC,
+	danger: #FF474C,
+	warning: #FFFC60,
+	info: #17A160
+);

@@ -1,0 +1,57 @@
+@import '../helpers/variables';
+@import '../helpers/extenders';
+
+.card-wrapper {
+	position: relative;
+	width: 100%;
+}
+
+.card {
+	position: relative;
+	float: left;
+	width: 95%;
+	display: block;
+	background: transparent;
+	color: $inverted-secondary-font-color;
+	text-align: left;
+	padding: map-get($padding, small) map-get($padding, small) * 2;
+
+	&:hover {
+		background: darken($secondary-inverted-background-color, 3%);
+	}
+
+	.calendar {
+		float: left;
+		padding: map-get($padding, small);
+		width: map-get($height, tabulation) * 1.05;
+		height: map-get($height, tabulation) * 1.05;
+		background: $secondary-inverted-background-color;
+		text-align: center;
+
+		.date {
+			font-size: 1.5em;
+			font-weight: bold;
+		}
+
+		.month {
+			font-size: 0.8em;
+			font-weight: bold;
+		}
+	}
+
+	.information {
+		margin-left: map-get($padding, small);
+		float: left;
+		width: 60%;
+
+		.title {
+			font-size: 0.8em;
+			font-weight: bold;
+		}
+
+		.summary {
+			margin-top: map-get($padding, extra-small);
+			font-size: 0.7em;
+		}
+	}
+}

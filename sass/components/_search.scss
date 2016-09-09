@@ -1,0 +1,12 @@
+.search-box {
+	position: relative;
+	width: 80%;
+	height: map-get($height, tabulation) * 0.5;
+	border: 0px;
+	border-radius: 0px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: map-get($padding, normal) 0px;
+	background: $secondary-inverted-background-color;
+	color: $inverted-secondary-font-color;
+}
