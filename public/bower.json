@@ -19,6 +19,8 @@
     "tests"
   ],
   "dependencies": {
-    "glyphicons": "^0.0.2"
+    "glyphicons": "^0.0.2",
+    "clndr": "^1.4.6",
+    "underscore": "^1.8.3"
   }
 }
