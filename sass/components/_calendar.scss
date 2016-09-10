@@ -1,0 +1,258 @@
+@import '../helpers/variables';
+@import '../helpers/extenders';
+
+.cal1
+{
+    margin: 0px auto;
+    max-width: 850px;
+    font-family: $font-family;
+    font-size: 14px;
+
+    .clndr
+    {
+        .clndr-controls
+        {
+            @extend %clearfix;
+            width: 100%;
+            position: relative;
+            margin-bottom: 10px;
+            color: lighten($inverted-background-color, 20%);
+
+            .month
+            {
+                float: left;
+                width: 30%;
+                text-align: center;
+                padding: 1.5%;
+                background: lighten($inverted-background-color, 70%);
+                &:hover { background: lighten($inverted-background-color, 67.5%); }
+            }
+
+            .clndr-control-button
+            {
+                float: left;
+                width: 30%;
+                padding: 1.5%;
+                background: transparent;
+                text-align: right;
+
+                &.rightalign
+                {
+                    text-align: left;
+                    width: 31%;
+                }
+                .clndr-next-button
+                {
+                    cursor: pointer;
+                    padding: map-get($padding, small);
+                    background: lighten($inverted-background-color, 70%);
+                    @extend %noselect;
+                    &:hover { background: lighten($inverted-background-color, 67.5%); }
+                    &.inactive
+                    {
+                        opacity: 0.5;
+                        &:hover
+                        {
+                            background: none;
+                            cursor: default;
+                        }
+                    }
+                }
+                .clndr-previous-button
+                {
+                    cursor: pointer;
+                    padding: map-get($padding, small);
+                    background: lighten($inverted-background-color, 70%);
+                    @extend %noselect;
+                    &:hover { background: lighten($inverted-background-color, 67.5%); }
+                    &.inactive
+                    {
+                        opacity: 0.5;
+                        &:hover
+                        {
+                            background: none;
+                            cursor: default;
+                        }
+                    }
+                }
+            }
+        }
+
+        .clndr-table
+        {
+            table-layout: fixed;
+            width: 100%;
+
+            .header-days
+            {
+                height: 30px;
+                font-size: 14px;
+                background: lighten($inverted-background-color, 70%);
+
+                .header-day
+                {
+                    vertical-align: middle;
+                    text-align: center;
+                    border-left: $clndr-border;
+                    border-top: $clndr-border;
+
+                    color: lighten($inverted-background-color, 20%);
+                    font-weight: bold;
+
+                    &:hover 
+                    {
+                        background: lighten($inverted-background-color, 67.5%);
+                    }
+
+                    &:last-child
+                    {
+                        border-right: $clndr-border;
+                    }
+                }
+            }
+
+            tr
+            {
+                height: 85px;
+
+                td
+                {
+                    vertical-align: top;
+                }
+
+                .day
+                {
+                    border-left: $clndr-border;
+                    border-top: $clndr-border;
+                    width: 100%;
+                    height: inherit;
+                    background: lighten($inverted-secondary-font-color, 32.5%);
+                    cursor: pointer;
+
+                    &:hover { background: lighten($inverted-secondary-font-color, 30%); }
+
+                    &.today, &.my-today
+                    {
+                        background: lighten($inverted-secondary-font-color, 32.5%);
+                        border-bottom: $clndr-border-highlighted-red;
+                        &:hover { background: lighten($inverted-secondary-font-color, 30%); }
+                        &.event
+                        {
+                            background: lighten($inverted-secondary-font-color, 32.5%);
+                            border-bottom: $clndr-border-highlighted-red;
+                        }
+                    }
+
+                    &.event, &.my-event
+                    {
+                        background: lighten($inverted-secondary-font-color, 32.5%);
+                        border-bottom: $clndr-border-highlighted-blue;
+                        &:hover
+                        {
+                            background: lighten($inverted-secondary-font-color, 30%);
+                        }
+                    }
+
+                    &.inactive, &.my-inactive
+                    {
+                        background: lighten($inverted-secondary-font-color, 27.5%);
+                    }
+
+                    &:last-child
+                    {
+                        border-right: $clndr-border;
+                    }
+
+                    .day-contents
+                    {
+                        box-sizing: border-box;
+                        width: 50%;
+                        //height: 100%;
+                        padding: 8px;
+                        font-size: 16px;
+                        text-align: right;
+                        color: lighten($secondary-font-color, 10%);
+                        float: right;
+                    }
+
+                    .event-counter
+                    {
+                        @extend .day-contents;
+                        bottom: 0px;
+
+                        .counter
+                        {
+                            width: 18px;
+                            height: 18px;
+                            display: block;
+                            border-radius: 50%;
+                            padding: 1.5%;
+                            background: lighten($inverted-background-color, 70%);
+                            color: #fff;
+                            font-size: 14px;
+                            text-align: center;
+                        }
+                    }
+
+                    .tip {
+                        display: none;
+                        float: right;
+                        box-sizing: border-box;
+                        width: 100%;
+                        //height: 100%;
+                        padding: 8px;
+                        font-size: 12px;
+                        text-align: center;
+                        color: lighten($secondary-font-color, 10%);
+                    }
+                }
+
+                .empty, .adjacent-month, .my-empty, .my-adjacent-month
+                {
+                    border-left: $clndr-border;
+                    border-top: $clndr-border;
+                    width: 100%;
+                    height: inherit;
+                    background: lighten($inverted-secondary-font-color, 32.5%);
+                    color: lighten($inverted-secondary-font-color, 37.5%);
+
+                    &:hover { background: lighten($inverted-secondary-font-color, 30%); }
+
+                    &:last-child
+                    {
+                        border-right: $clndr-border;
+                    }
+
+                    &.event, &.my-event
+                    {
+                        border-bottom: $clndr-border-highlighted-blue;
+                    }
+
+                    .day-contents
+                    {
+                        color: lighten($secondary-font-color, 45%);
+                    }
+                }
+
+                &:last-child
+                {
+                    .day, .my-day
+                    {
+                        border-bottom: $clndr-border;
+                        
+                        &.event, &.my-event {
+                            border-bottom: $clndr-border-highlighted-blue;
+                        }
+                    }
+
+                    .empty, .my-empty
+                    {
+                        border-bottom: $clndr-border;
+                    }
+
+                }
+            }
+        }
+    }
+
+}

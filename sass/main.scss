@@ -24,8 +24,13 @@ body {
 	@extend %float-left;
 	width: map-get($main-width, large);
 	background: $background-color;
+
+	.inner {
+		margin: map-get($padding, none);
+	}
 }
 
 @import 'components/sidebar';
 @import 'components/search';
 @import 'components/card';
+@import 'components/calendar';
