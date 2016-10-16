@@ -1,12 +1,8 @@
 var gulp = require('gulp');
-var sass = require('gulp-sass');
+var requireDir = require('require-dir');
+requireDir('./gulp_tasks');
 
-gulp.task('styles', function() {
-	gulp.src('sass/**/*.scss')
-		.pipe(sass().on('error', sass.logError))
-		.pipe(gulp.dest('./public/stylesheets'))
-});
+gulp.task('build', ['build:styles', 'build:components']);
+gulp.task('watch', ['watch:styles', 'watch:components']);
 
-gulp.task('default', function() {
-	gulp.watch('./sass/**/*.scss', ['styles']);
-})
+gulp.task('default', ['build', 'watch']);

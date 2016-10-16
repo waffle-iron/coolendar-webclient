@@ -17,16 +17,21 @@ body {
 }
 
 .container > div {
-	min-height: map-get($height, minimum-page);
+	height: 100%;
+	position: absolute;
 }
 
 .main {
-	@extend %float-left;
+	left: 0px;
 	width: map-get($main-width, large);
 	background: $background-color;
 
 	.inner {
-		margin: map-get($padding, none);
+		position: absolute;
+		top: 50%;
+		left: 20%;
+		transform: translate(-20%, -50%);
+		width: 100%;
 	}
 }
 

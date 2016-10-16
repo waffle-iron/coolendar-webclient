@@ -2,8 +2,7 @@
 @import '../helpers/extenders';
 
 .sidebar {
-	@extend %float-left;
-	position: relative;
+	right: 0px;
 	width: map-get($sidebar-width, large);
 	background: $inverted-background-color;
 	color: $inverted-primary-font-color;
@@ -51,7 +50,7 @@
 		.data-wrapper {
 			float: left;
 			width: 100%;
-			height: map-get($height, minimum-page) - (map-get($height, tabulation) * 4); 
+			height: 100%; 
 			overflow: hidden;
 		}
 	}

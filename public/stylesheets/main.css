@@ -12,16 +12,19 @@ body {
   min-height: 600px; }
 
 .container > div {
-  min-height: 600px; }
+  height: 100%;
+  position: absolute; }
 
 .main {
+  left: 0px;
   width: 75%;
   background: #F2F2F2; }
   .main .inner {
-    margin: 0; }
-
-.main, .sidebar {
-  float: left; }
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-20%, -50%);
+    width: 100%; }
 
 .sidebar .tabs .item, .sidebar .button {
   cursor: pointer;
@@ -48,7 +51,7 @@ body {
   /* IE10+ */ }
 
 .sidebar {
-  position: relative;
+  right: 0px;
   width: 25%;
   background: #1C1C1C;
   color: #E1E1E1; }
@@ -83,7 +86,7 @@ body {
     .sidebar .content .data-wrapper {
       float: left;
       width: 100%;
-      height: 400px;
+      height: 100%;
       overflow: hidden; }
   .sidebar .button {
     position: absolute;
@@ -107,9 +110,6 @@ body {
   margin: 20px 0px;
   background: #272727;
   color: #A5A5A5; }
-
-.main, .sidebar {
-  float: left; }
 
 .sidebar .tabs .item, .sidebar .button {
   cursor: pointer;
@@ -173,9 +173,6 @@ body {
     .card .information .summary {
       margin-top: 5px;
       font-size: 0.7em; }
-
-.main, .sidebar {
-  float: left; }
 
 .sidebar .tabs .item, .sidebar .button {
   cursor: pointer;
