@@ -4,14 +4,19 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var fs = require('fs');
 
 var app = express();
+var routesPath = 'app/routes';
+
+require('babel-register')({
+  presets: ['react', 'es2015']
+});
+
+app.use('/semantic', express.static(__dirname + '/node_modules/semantic-ui-css/'));
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
@@ -20,10 +25,41 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'app/public')));
 
-app.use('/', routes);
-app.use('/users', users);
+function loadController(dirPath, fileName) {
+  routeFile = path.join(__dirname, dirPath, fileName);
+  route = require(routeFile);
+  if (dirPath == routesPath) {
+    dirPath = '/';
+  } else {
+    dirPath = '/' + dirPath.replace(routesPath + '/', '') + '/';
+  }
+  
+  if(fileName.split(".",1)=='index'){
+    uri = dirPath;
+  } else{
+    uri = dirPath + fileName.split(".", 1);
+  }
+
+  app.use(uri, route);
+  console.log('route ' + uri + ' loaded using ' + routeFile);
+}
+
+function readControllerFiles(dirPath, fileName) {
+  if(fileName.substr(-3) == '.js') {
+    loadController(dirPath, fileName);
+  } else if (fs.lstatSync(path.join(__dirname, dirPath, fileName)).isDirectory()) {
+    fs.readdirSync(path.join(__dirname, dirPath, fileName)).forEach(function (child) {
+      newDirPath = dirPath + '/' + fileName;
+      readControllerFiles(newDirPath, child);
+    });
+  }
+}
+
+fs.readdirSync('./' + routesPath).forEach(function (file) {
+  readControllerFiles(routesPath, file);
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
