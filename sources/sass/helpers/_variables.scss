@@ -39,3 +39,7 @@ $button-background-color: (
 $clndr-border: 1px solid lighten($inverted-secondary-font-color, 27%);
 $clndr-border-highlighted-blue: 2px solid lighten(map-get($button-background-color, primary), 17%);
 $clndr-border-highlighted-red: 2px solid lighten(map-get($button-background-color, danger), 17%);
+
+$color-palettes: (
+	violet: #A291FB
+);

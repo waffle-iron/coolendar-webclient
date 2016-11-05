@@ -7,7 +7,7 @@ var SidebarWrapper = React.createClass({
 		return (
 				<div>
 					<div className='sidebar-menu'>
-						<Menu pointing secondary>
+						<Menu pointing secondary inverted>
 							<Menu.Item name='timeline' active={true}>
 								<Icon name='wait' />
 							</Menu.Item>
@@ -25,8 +25,8 @@ var SidebarWrapper = React.createClass({
 });
 
 var sidebarContentStyles = {
-	padding: '5%',
-	width: '95%'
+	padding: '6.5%',
+	width: '100%'
 }
 
 module.exports = SidebarWrapper;

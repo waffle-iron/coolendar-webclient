@@ -5,7 +5,7 @@
 	right: 0px;
 	width: map-get($sidebar-width, large);
 	background: $inverted-background-color;
-	color: $inverted-primary-font-color;
+	color: $inverted-secondary-font-color;
 
 	.tabs {
 		position: absolute;
@@ -58,15 +58,23 @@
 	.button {
 		@extend %button;
 		position: absolute;
-		bottom: 0;
 		width: 100%;
-		min-height: map-get($height, tabulation) * 0.75;
+		min-height: map-get($height, tabulation) * 0.50;
 		background: map-get($button-background-color, primary);
 		color: $inverted-primary-font-color;
-		line-height: map-get($height, tabulation) * 0.75;
+		line-height: map-get($height, tabulation) * 0.50;
 
 		&:hover {
 			background: darken(map-get($button-background-color, primary), 5%);
 		}
+	}
+
+	input[type='text'], input[type='password'] {
+		background: $secondary-inverted-background-color !important;
+		color: $inverted-primary-font-color !important;
+	}
+
+	label, h1, h2, h3, h4, h5, h6 {
+		color: $inverted-secondary-font-color !important;
 	}
 }

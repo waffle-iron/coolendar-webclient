@@ -10,7 +10,7 @@ var Container = React.createClass({
 						<Grid.Column width={12} textAlign='center' verticalAlign='middle'>
 							<Header as='h1' color='grey'>No content yet.</Header>
 						</Grid.Column>
-						<Grid.Column width={4} style={sidebarStyles} >
+						<Grid.Column width={4} className='sidebar' style={sidebarStyles} >
 							<SidebarWrapper />
 						</Grid.Column>
 					</Grid.Row>
@@ -34,7 +34,7 @@ var containerRowStyles = {
 
 var sidebarStyles = {
 	padding: 0,
-	backgroundColor: '#F2F2F2',
+	backgroundColor: '#1C1C1C',
 	height: '100%'
 };
 
