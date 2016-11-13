@@ -27,6 +27,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'app/public')));
 
+app.use('/preview', require('./app/routes/preview'));
+
 function loadController(dirPath, fileName) {
   routeFile = path.join(__dirname, dirPath, fileName);
   route = require(routeFile);
