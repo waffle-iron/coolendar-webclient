@@ -57,7 +57,6 @@
 
 	.button {
 		@extend %button;
-		position: absolute;
 		width: 100%;
 		min-height: map-get($height, tabulation) * 0.50;
 		background: map-get($button-background-color, primary);
@@ -69,7 +68,7 @@
 		}
 	}
 
-	input[type='text'], input[type='password'] {
+	input[type='text'], input[type='password'], input[type='email'] {
 		background: $secondary-inverted-background-color !important;
 		color: $inverted-primary-font-color !important;
 	}

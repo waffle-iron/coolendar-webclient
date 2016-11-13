@@ -89,7 +89,6 @@ body {
       height: 100%;
       overflow: hidden; }
   .sidebar .button {
-    position: absolute;
     width: 100%;
     min-height: 25px;
     background: #1A8ACC;
@@ -97,7 +96,7 @@ body {
     line-height: 25px; }
     .sidebar .button:hover {
       background: #177bb5; }
-  .sidebar input[type='text'], .sidebar input[type='password'] {
+  .sidebar input[type='text'], .sidebar input[type='password'], .sidebar input[type='email'] {
     background: #272727 !important;
     color: #E1E1E1 !important; }
   .sidebar label, .sidebar h1, .sidebar h2, .sidebar h3, .sidebar h4, .sidebar h5, .sidebar h6 {
