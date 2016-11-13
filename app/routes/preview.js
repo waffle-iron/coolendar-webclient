@@ -19,6 +19,8 @@ for (let name in luthfieComponents) {
 
 for (let name in components) {
 	elements[name] = require(components[name].file);
+    if (typeof(elements[name].default !== 'undefined'))
+        elements[name] = elements[name].default;
 	router.get('/' + name, function(req, res, next) {
 		var body = React.createElement(elements[name]);
 		var html = ReactServer.renderToString(body);
