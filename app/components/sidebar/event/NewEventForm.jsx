@@ -1,7 +1,7 @@
 import { TextArea, Button, Form, Input, Message, Checkbox, Divider, Header } from 'semantic-ui-react'
 import React from 'react'
 
-class forgotPassword extends React.Component {
+class NewEventForm extends React.Component {
     render() {
 	    return (
 				<div>
@@ -38,4 +38,4 @@ class forgotPassword extends React.Component {
     }
 }
 
-export default forgotPassword
+export default NewEventForm

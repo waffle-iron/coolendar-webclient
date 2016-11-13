@@ -1,9 +1,9 @@
 import { Grid, Button, Header } from 'semantic-ui-react';
-var React = require('react');
-var SidebarWrapper = require('./sidebar/SidebarWrapper.jsx');
+import React from 'react';
+import SidebarWrapper from './sidebar/SidebarWrapper.jsx';
 
-var Container = React.createClass({
-	render: function() {
+class Container extends React.Component {
+	render() {
 		return (
 				<Grid columns={2} style={containerStyles}>
 					<Grid.Row style={containerRowStyles}>
@@ -11,13 +11,13 @@ var Container = React.createClass({
 							<Header as='h1' color='grey'>No content yet.</Header>
 						</Grid.Column>
 						<Grid.Column width={4} className='sidebar' style={sidebarStyles} >
-							<SidebarWrapper />
+							{this.props.children}
 						</Grid.Column>
 					</Grid.Row>
 				</Grid>
 			);
 	}
-});
+};
 
 var containerStyles = {
 	position: 'absolute',
@@ -38,4 +38,4 @@ var sidebarStyles = {
 	height: '100%'
 };
 
-module.exports = Container;
+export default Container;
