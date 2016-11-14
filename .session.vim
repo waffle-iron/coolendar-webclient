@@ -8,14 +8,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +19 app/components/sidebar/registration/RegistrationWrapper.jsx
-badd +34 app/components/sidebar/eventForm.jsx
+badd +1 app/components/sidebar/registration/RegistrationWrapper.jsx
 badd +1 app/components/sidebar/login/loginWrapper.jsx
-badd +1 app/components/sidebar/forgotPassword.jsx
-badd +4 app/utils/component-previews/luthfie.js
+badd +3 app/utils/component-previews/luthfie.js
+badd +0 app/components/sidebar/events/EventList.jsx
 argglobal
 silent! argdel *
-edit app/components/sidebar/eventForm.jsx
+edit app/components/sidebar/events/EventList.jsx
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -30,12 +29,12 @@ setlocal fdl=1
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 33 - ((22 * winheight(0) + 15) / 30)
+let s:l = 12 - ((11 * winheight(0) + 15) / 30)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-33
-normal! 019|
+12
+normal! 09|
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
