@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/GantengBersama/coolendar-webclient.png?label=ready&title=Ready)](https://waffle.io/GantengBersama/coolendar-webclient)
 # coolendar-webclient
 
 ## How to prepare development environment
